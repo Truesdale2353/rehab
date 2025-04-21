@@ -4,6 +4,7 @@ function App() {
 
   return (
     <>
+    <div id="home"></div>
      <div className="homepage">
       {/* Sticky Header */}
       <header className="header sticky">
@@ -13,7 +14,7 @@ function App() {
             <ul>
               <li><a href="#home">Начало</a></li>
               <li><a href="#services">Услуги</a></li>
-              <li><a href="#team">Екип</a></li>
+              <li><a href="#about">Екип</a></li>
               <li><a href="#contact">Контакти</a></li>
             </ul>
           </nav>
@@ -21,18 +22,18 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="hero" id="home">
+      <section className="hero">
         <div className="hero-overlay">
           <h1>Възстановете Силата и Гъвкавостта Си</h1>
-          <p>Персонализирани планове за лечение за облекчаване на болката и подобряване на подвижността</p>
+          <p id="services">Персонализирани планове за лечение за облекчаване на болката и подобряване на подвижността</p>
           <div className="hero-ctas">
           <a href="https://test5v9u.setmore.com" id="Setmore_button_iframe" className="btn primary">Запази час</a>
           </div>
-        </div>
-      </section>
-
+        </div >
+      </section >
+    
       {/* Services Overview */}
-      <section className="services" id="services">
+      <section className="services">
         <h2>Нашите Услуги</h2>
         <div className="service-list">
           <div className="service-item">
@@ -52,14 +53,14 @@ function App() {
           </div>
           <div className="service-item">
             <div className="service-icon">👶</div>
-            <h3>Детска Физиотерапия</h3>
-            <p>Специализирана грижа за развиващи се тела.</p>
+            <h3 >Детска Физиотерапия</h3>
+            <p  id="about">Специализирана грижа за развиващи се тела.</p>
           </div>
         </div>
       </section>
 
       {/* About Us Snapshot */}
-      <section className="about-snapshot" id="about">
+      <section className="about-snapshot">
         <img src="https://static.partyking.org/fit-in/1300x0/products/original/papperstallrikar-batman-94968-1.jpg" alt="Интериор на клиника" className="about-img" />
         <div className="about-content">
           <h2>За Нас</h2>
