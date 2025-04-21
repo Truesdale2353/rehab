@@ -61,7 +61,7 @@ function App() {
 
       {/* About Us Snapshot */}
       <section className="about-snapshot">
-        <img src="https://static.partyking.org/fit-in/1300x0/products/original/papperstallrikar-batman-94968-1.jpg" alt="Интериор на клиника" className="about-img" />
+        <img src="https://agemed.org/wp-content/uploads/Brecka-Gary-Human-Biologist_AMMG-Faculty.jpg" alt="Интериор на клиника" className="about-img" />
         <div className="about-content">
           <h2>За Нас</h2>
           <p>В PhysioCare нашата мисия е да ви помогнем да постигнете оптимално здраве и подвижност. С над 15 години опит, нашият отдаден екип предоставя персонализирана грижа, съобразена с вашите нужди.</p>
@@ -73,19 +73,19 @@ function App() {
         <h2>Истории на Успеха</h2>
         <div className="testimonial-list">
           <div className="testimonial-item">
-            <img src="https://static.partyking.org/fit-in/1300x0/products/original/peter-griffin-pappmask-1.jpg" alt="Пациент 1" />
-            <blockquote>„Благодарение на PhysioCare болката в гърба ми изчезна и съм по-активен от всякога.“</blockquote>
-            <cite>- Alex P.</cite>
+            <img src="https://images.pexels.com/photos/5638645/pexels-photo-5638645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Пациент 1" />
+            <blockquote>„Благодарение на PhysioCare болката в гърба ми изчезна и съм по-активена от всякога.“</blockquote>
+            <cite>- Радостина С.</cite>
           </div>
           <div className="testimonial-item">
-            <img src="https://static.partyking.org/fit-in/1300x0/products/original/batman-masker-i-papp-1.jpg" alt="Пациент 2" />
+            <img src="https://images.pexels.com/photos/14438790/pexels-photo-14438790.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Пациент 2" />
             <blockquote>„Професионален и грижовен екип. Горещо препоръчвам!“</blockquote>
-            <cite>- Jamie L.</cite>
+            <cite>- Илияна Р.</cite>
           </div>
           <div className="testimonial-item">
-            <img src="https://static.partyking.org/fit-in/1300x0/products/original/papperstallrikar-batman-94968-1.jpg" alt="Пациент 3" />
+            <img src="https://images.pexels.com/photos/6567336/pexels-photo-6567336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Пациент 3" />
             <blockquote>„Възстановяването ми след спортна травма беше безпроблемно благодарение на тяхното експертно ръководство.“</blockquote>
-            <cite>- Chris M.</cite>
+            <cite>- Ванеса M.</cite>
           </div>
         </div>
       </section>
