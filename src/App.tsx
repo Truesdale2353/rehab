@@ -27,7 +27,7 @@ function App() {
           <h1>Възстановете Силата и Гъвкавостта Си</h1>
           <p id="services">Персонализирани планове за лечение за облекчаване на болката и подобряване на подвижността</p>
           <div className="hero-ctas">
-          <a href="https://test5v9u.setmore.com" id="Setmore_button_iframe" className="btn primary">Запази час</a>
+          <a href="https://test5v9u.setmore.com" id="Setmore_button_iframe" className="btn primary">Запази своя час сега</a>
           </div>
         </div >
       </section >
