@@ -17,9 +17,6 @@ function App() {
               <li><a href="#contact">Контакти</a></li>
             </ul>
           </nav>
-          <div className="hero-ctas">
-            <a href="https://test5v9u.setmore.com" id="Setmore_button_iframe" className="btn primary">Запази час</a>
-          </div>
         </div>
       </header>
 

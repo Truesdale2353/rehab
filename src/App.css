@@ -4,6 +4,14 @@
   padding: 2rem;
   text-align: center;
 }
+@media only screen and (max-device-width: 480px) {
+  #root {
+    width: 100%;
+    max-width: 100%;
+    padding: 0px;
+    
+  }
+}
 
 .homepage {
   font-family: Arial, sans-serif;
