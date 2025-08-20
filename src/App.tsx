@@ -1,107 +1,95 @@
+import { useEffect } from 'react'
 import './App.css'
+import getConfig from './configResolvers/whitelabelResolver'
+import { applyTheme } from './configResolvers/themePicker'
+import ContactForm from './contact-form/contactForm'
 
 function App() {
+  const config = getConfig(window.location)
+  const { brand, navigation, hero, services, about, testimonials, contact, theme, externalProviers } = config
+
+  useEffect(() => {
+    applyTheme(theme)
+  }, [theme])
 
   return (
     <>
-    <div id="home"></div>
-     <div className="homepage">
-      {/* Sticky Header */}
-      <header className="header sticky">
-        <div className="nav-container">
-        <img src="https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png" alt="Лого" className="logo" />
-          <nav className="nav">
-            <ul>
-              <li><a href="#home">Начало</a></li>
-              <li><a href="#services">Услуги</a></li>
-              <li><a href="#about">Екип</a></li>
-              <li><a href="#contact">Контакти</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <div id="home"></div>
+      <div className="homepage">
+        <header className="header sticky">
+          <div className="nav-container">
+            <img src={brand.logo} alt={brand.alt || 'Лого'} className="logo" />
+            <nav className="nav">
+              <ul>
+                {navigation.map(item => (
+                  <li key={item.href}><a href={item.href}>{item.label}</a></li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </header>
 
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-overlay">
-          <h1>Възстановете Силата и Гъвкавостта Си</h1>
-          <p id="services">Персонализирани планове за лечение за облекчаване на болката и подобряване на подвижността</p>
-          <div className="hero-ctas">
-          <a href="https://test5v9u.setmore.com" id="Setmore_button_iframe" className="btn primary">Запази своя час сега</a>
+        <section className="hero" style={hero.backgroundImage ? { backgroundImage: `url(${hero.backgroundImage})` } : undefined}>
+          <div className="hero-overlay">
+            <h1>{hero.title}</h1>
+            <p id={hero.subtitleAnchorId}>{hero.subtitle}</p>
+            <div className="hero-ctas">
+              {hero.ctas.map(cta => (
+                <a key={cta.href} href={cta.href} id={cta.id || undefined} className={cta.className || ''}>{cta.label}</a>
+              ))}
+            </div>
           </div>
-        </div >
-      </section >
-    
-      {/* Services Overview */}
-      <section className="services">
-        <h2>Нашите Услуги</h2>
-        <div className="service-list">
-          <div className="service-item">
-            <div className="service-icon">🤲</div>
-            <h3>Манипулативна Терапия</h3>
-            <p>Практически техники за намаляване на болката и възстановяване на движението.</p>
-          </div>
-          <div className="service-item">
-            <div className="service-icon">🏋️</div>
-            <h3>Предписание на Упражнения</h3>
-            <p>Персонализирани планове за упражнения, които подпомагат вашето възстановяване.</p>
-          </div>
-          <div className="service-item">
-            <div className="service-icon">🏃</div>
-            <h3>Спортна Рехабилитация</h3>
-            <p>Върнете се в играта по-силни и по-сигурни.</p>
-          </div>
-          <div className="service-item">
-            <div className="service-icon">👶</div>
-            <h3 >Детска Физиотерапия</h3>
-            <p  id="about">Специализирана грижа за развиващи се тела.</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* About Us Snapshot */}
-      <section className="about-snapshot">
-        <img src="https://agemed.org/wp-content/uploads/Brecka-Gary-Human-Biologist_AMMG-Faculty.jpg" alt="Интериор на клиника" className="about-img" />
-        <div className="about-content">
-          <h2>За Нас</h2>
-          <p>В PhysioCare нашата мисия е да ви помогнем да постигнете оптимално здраве и подвижност. С над 15 години опит, нашият отдаден екип предоставя персонализирана грижа, съобразена с вашите нужди.</p>
-        </div>
-      </section>
+        <section className="services">
+          <h2>{services.heading}</h2>
+          <div className="service-list">
+            {services.items.map((s, idx) => (
+              <div className="service-item" key={idx}>
+                <div className="service-icon">{s.icon}</div>
+                <h3>{s.title}</h3>
+                <p id={s.anchorId || undefined}>{s.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
-      {/* Testimonials / Success Stories */}
-      <section className="testimonials">
-        <h2>Истории на Успеха</h2>
-        <div className="testimonial-list">
-          <div className="testimonial-item">
-            <img src="https://images.pexels.com/photos/5638645/pexels-photo-5638645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Пациент 1" />
-            <blockquote>„Благодарение на PhysioCare болката в гърба ми изчезна и съм по-активена от всякога.“</blockquote>
-            <cite>- Радостина С.</cite>
+        <section className="about-snapshot">
+          <img src={about.image} alt={about.imageAlt || ''} className="about-img" />
+          <div className="about-content">
+            <h2>{about.heading}</h2>
+            <p>{about.text}</p>
           </div>
-          <div className="testimonial-item">
-            <img src="https://images.pexels.com/photos/14438790/pexels-photo-14438790.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Пациент 2" />
-            <blockquote>„Професионален и грижовен екип. Горещо препоръчвам!“</blockquote>
-            <cite>- Илияна Р.</cite>
-          </div>
-          <div className="testimonial-item">
-            <img src="https://images.pexels.com/photos/6567336/pexels-photo-6567336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Пациент 3" />
-            <blockquote>„Възстановяването ми след спортна травма беше безпроблемно благодарение на тяхното експертно ръководство.“</blockquote>
-            <cite>- Ванеса M.</cite>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <footer className="footer" id="contact">
-        <div className="footer-content">
-            <h4>Контакти</h4>
-            <p>ул. „Здраве“ 123, Град Уелнес</p>
-            <p>📞 +1 (234) 567-890</p>
-            <p>✉️ info@physiocare.com</p>
-        </div>
-      </footer>
-    </div>
+        <section className="testimonials">
+          <h2>{testimonials.heading}</h2>
+          <div className="testimonial-list">
+            {testimonials.items.map((t, idx) => (
+              <div className="testimonial-item" key={idx}>
+                <img src={t.image} alt={t.alt || `Пациент ${idx + 1}`} />
+                <blockquote>{t.quote}</blockquote>
+                <cite>- {t.author}</cite>
+              </div>
+            ))}
+          </div>
+        </section>
+        {externalProviers.formId !== "" &&
+          <section className='contact-form'>
+            <ContactForm formId={externalProviers.formId}></ContactForm>
+          </section>}
+
+        <footer className="footer" id="contact">
+          <div className="footer-content">
+            <h4>{contact.heading}</h4>
+            <p>{contact.address}</p>
+            <p>📞 {contact.phone}</p>
+            <p>✉️ {contact.email}</p>
+          </div>
+        </footer>
+      </div>
     </>
   )
 }
 
-export default App;
+export default App
