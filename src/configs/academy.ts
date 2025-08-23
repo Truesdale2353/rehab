@@ -25,10 +25,10 @@ const defaultConfig: IConfig = {
         ]
     },
     about: {
-        image: "https://via.placeholder.com/1200x800?text=Thales+Academy",
+        image: "https://img.freepik.com/free-photo/happy-kids-elementary-school_53876-138141.jpg",
         imageAlt: "Снимка на учебна зала",
         heading: "За Академията",
-        text: "В Thales Academy вярваме, че всеки ученик може да разгърне потенциала си по математика. Нашият екип от опитни преподаватели предлага ясни обяснения, систематични стратегии за решаване и подкрепа, насочена към резултати."
+        text: "В Thales Academy вярваме, че всеки ученик може да разгърне потенциала си по математика. С нашия екип от опитни преподаватели, ясни обяснения и систематични стратегии за решаване на задачи, пътят към успеха става по-достъпен. Нашите уроци са с продължителност 90 минути и предлагаме два варианта: групови занятия до 6 ученика за 40 лв или индивидуални уроци за 70 лв."
     },
     testimonials: {
         heading: "Отзиви на Ученици и Родители",
@@ -44,12 +44,12 @@ const defaultConfig: IConfig = {
             bg: "#F8FAFC",             
             text: "#1F2937",           
             muted: "#6B7280",           
-            primary: "#1E3A8A",         
+            primary: "#272361",         
             "primary-contrast": "#FFFFFF",
             accent: "#F59E0B",          
             surface: "#FFFFFF",        
-            "header-bg": "#0B3D91",    
-            "footer-bg": "#0B3D91",
+            "header-bg": "#272361",    
+            "footer-bg": "#272361",
             "footer-text-color": "#fff",
             link: "#FFFFFF",            
             "link-hover": "#0EA5E9",    
