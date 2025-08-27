@@ -63,6 +63,7 @@ function App() {
         </section>
         {externalProviers.formId !== "" &&
           <section className='contact-form'>
+            <h4>Моля, попълнете формата с Вашите данни. След изпращането ѝ, наш екип ще се свърже с Вас по телефон, за да предложи часове, съобразени с Вашите предпочитания.</h4>
             <ContactForm formId={externalProviers.formId}></ContactForm>
           </section>}
 

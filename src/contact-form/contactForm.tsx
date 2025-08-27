@@ -13,7 +13,7 @@ const ContactForm = ({ formId }: ContactFormProps) => {
   const [state, handleSubmit] = useForm(formId);
 
   if (state.succeeded) {
-    return <p>Благодарим! Заявката е изпратена успешно.</p>;
+    return <p className='success-message'>Благодарим! Заявката е изпратена успешно.</p>;
   }
 
   return (
@@ -115,10 +115,10 @@ const ContactForm = ({ formId }: ContactFormProps) => {
         <label>Предпочитани дни</label>
         <div>
           <DaysSelect
-  days={days}
-  name="preferredDays"
-  defaultValues={[]}
-/>
+            days={days}
+            name="preferredDays"
+            defaultValues={[]}
+          />
 
         </div>
         <ValidationError prefix="Предпочитани дни" field="preferredDays" errors={state.errors} />
@@ -153,7 +153,7 @@ const ContactForm = ({ formId }: ContactFormProps) => {
       </div>
 
       <button type="submit" disabled={state.submitting}>
-        {state.submitting ? 'Изпращане…' : 'Submit'}
+        {state.submitting ? 'Изпращане…' : 'Изпрати'}
       </button>
     </form>
   );
