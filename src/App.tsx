@@ -6,7 +6,7 @@ import ContactForm from './contact-form/contactForm'
 
 function App() {
   const config = getConfig(window.location)
-  const { brand, navigation, hero, services, about, testimonials, contact, theme, externalProviers } = config
+  const { brand, navigation, hero, services, about, contact, theme, externalProviers } = config
 
   useEffect(() => {
     applyTheme(theme)
@@ -55,7 +55,7 @@ function App() {
         </section>
 
         <section className="about-snapshot">
-          <img src={about.image} alt={about.imageAlt || ''} className="about-img" />
+
           <div className="about-content">
             <h2>{about.heading}</h2>
             <p>{about.text}</p>
