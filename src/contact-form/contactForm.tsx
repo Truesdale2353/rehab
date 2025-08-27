@@ -1,12 +1,13 @@
 import { useForm, ValidationError } from '@formspree/react';
 import './contactForm.css';
+import DaysSelect from './multi-select';
 
 type ContactFormProps = {
   formId: string;
 };
 
 const grades = Array.from({ length: 8 }, (_, i) => 5 + i); // 5–12
-const days = ['Понеделник','Вторник','Сряда','Четвъртък','Петък','Събота','Неделя'];
+const days = ['Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота', 'Неделя'];
 
 const ContactForm = ({ formId }: ContactFormProps) => {
   const [state, handleSubmit] = useForm(formId);
@@ -20,7 +21,7 @@ const ContactForm = ({ formId }: ContactFormProps) => {
       {/* Име, Презиме, Фамилия на ученика */}
       <div>
         <label htmlFor="studentFirstName">Име на ученика</label>
-        <input id="studentFirstName" name="student.firstName" required type='text'/>
+        <input id="studentFirstName" name="student.firstName" required type='text' />
         <ValidationError prefix="Име на ученика" field="student.firstName" errors={state.errors} />
       </div>
       <div>
@@ -30,7 +31,7 @@ const ContactForm = ({ formId }: ContactFormProps) => {
       </div>
       <div>
         <label htmlFor="studentLastName">Фамилия на ученика</label>
-        <input id="studentLastName" name="student.lastName" required type='text'/>
+        <input id="studentLastName" name="student.lastName" required type='text' />
         <ValidationError prefix="Фамилия на ученика" field="student.lastName" errors={state.errors} />
       </div>
 
@@ -90,7 +91,7 @@ const ContactForm = ({ formId }: ContactFormProps) => {
       {/* Училище (optional) */}
       <div>
         <label htmlFor="school">Училище (по избор)</label>
-        <input id="school" name="school" placeholder="Училище в което учи" type='text'/>
+        <input id="school" name="school" placeholder="Училище в което учи" type='text' />
         <ValidationError prefix="Училище" field="school" errors={state.errors} />
       </div>
 
@@ -113,11 +114,12 @@ const ContactForm = ({ formId }: ContactFormProps) => {
       <div>
         <label>Предпочитани дни</label>
         <div>
-          {days.map(d => (
-            <label key={d} style={{ marginRight: 8 }}>
-              <input type="checkbox" name="preferredDays[]" value={d} /> {d}
-            </label>
-          ))}
+          <DaysSelect
+  days={days}
+  name="preferredDays"
+  defaultValues={[]}
+/>
+
         </div>
         <ValidationError prefix="Предпочитани дни" field="preferredDays" errors={state.errors} />
       </div>
@@ -138,14 +140,14 @@ const ContactForm = ({ formId }: ContactFormProps) => {
 
       {/* Имейл за потвърждение (запазвам оригиналното поле) */}
       <div>
-        <label htmlFor="email">Email Address</label>
+        <label htmlFor="email">Електронна поща</label>
         <input id="email" type="email" name="email" required />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
 
       {/* Допълнително съобщение (запазвам оригиналното поле) */}
       <div>
-        <label htmlFor="message">Message</label>
+        <label htmlFor="message">Съобщение</label>
         <textarea id="message" name="message" />
         <ValidationError prefix="Message" field="message" errors={state.errors} />
       </div>

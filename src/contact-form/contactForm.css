@@ -165,3 +165,17 @@ input[type="tel"]{
   color: color-mix(in srgb, var(--text) 65%, transparent);
   font-size: 0.85rem;
 }
+.dropdown-container{
+  width: 100%;
+}
+
+.dropdown-container .rs__menu{
+      display: flex !important;
+    justify-content: start !important;
+}
+.dropdown-container .rs__menu div {
+      width: 100%;
+}
+.dropdown-container .rs__menu div div{
+      display: flex ;
+}

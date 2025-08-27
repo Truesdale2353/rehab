@@ -1,11 +1,12 @@
 import { IConfig } from "./Iconfig";
 
 const defaultConfig: IConfig = {
-    brand: { name: "Thales Academy", logo: "https://i.postimg.cc/kXTFLrwL/a0a6e49d-2597-43f4-a607-7feb4c6f6e2d.jpg", alt: "Лого" },
+    brand: { name: "Thales Academy", logo: "https://i.postimg.cc/KvC268gj/logo.jpg", alt: "Лого" },
     navigation: [
         { label: "Начало", href: "#home" },
         { label: "Курсове", href: "#services" },
         { label: "Екип", href: "#about" },
+         { label: "Цени", href: "#prices" },
         { label: "Контакти", href: "#contact" }
     ],
     hero: {
@@ -26,8 +27,8 @@ const defaultConfig: IConfig = {
     about: {
         image: "https://img.freepik.com/free-photo/happy-kids-elementary-school_53876-138141.jpg",
         imageAlt: "Снимка на учебна зала",
-        heading: "За Академията",
-        text: "В Thales Academy вярваме, че всеки ученик може да разгърне потенциала си по математика. С нашия екип от опитни преподаватели, ясни обяснения и систематични стратегии за решаване на задачи, пътят към успеха става по-достъпен. Нашите уроци са с продължителност 90 минути и предлагаме два варианта: групови занятия до 6 ученика за 40 лв или индивидуални уроци за 70 лв."
+        heading: "За Нас",
+        text: "Ние сме екип от млади и опитни преподаватели - студенти по  математика и информатика в Софийски университет “Св. Климент Охридски” с педагогическа подготовка. Обединява ни мотивацията да спомогнем за развитието на логическото и критичното мислене на бъдещото поколение."
     },
     testimonials: {
         heading: "Отзиви на Ученици и Родители",

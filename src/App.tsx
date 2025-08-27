@@ -61,23 +61,44 @@ function App() {
             <p>{about.text}</p>
           </div>
         </section>
-
-        <section className="testimonials">
-          <h2>{testimonials.heading}</h2>
-          <div className="testimonial-list">
-            {testimonials.items.map((t, idx) => (
-              <div className="testimonial-item" key={idx}>
-                <img src={t.image} alt={t.alt || `Пациент ${idx + 1}`} />
-                <blockquote>{t.quote}</blockquote>
-                <cite>- {t.author}</cite>
-              </div>
-            ))}
-          </div>
-        </section>
         {externalProviers.formId !== "" &&
           <section className='contact-form'>
             <ContactForm formId={externalProviers.formId}></ContactForm>
           </section>}
+
+        <section className='prices-table'>
+          <table id="prices">
+            <thead>
+              <tr>
+                <th>Вид занятие</th>
+                <th>Продължителност</th>
+                <th>Цена за урок</th>
+                <th>Месечна такса (4 занятия)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Присъствено – Индивидуално</td>
+                <td>1 ч. 30 мин.</td>
+                <td>70 лв / 35.78 €</td>
+                <td>280 лв / 143.13 €</td>
+              </tr>
+              <tr>
+                <td>Присъствено – Групово (2–6 уч.)</td>
+                <td>1 ч. 30 мин.</td>
+                <td>40 лв / 20.47 €</td>
+                <td>160 лв / 81.81 €</td>
+              </tr>
+              <tr>
+                <td>Онлайн – Индивидуално</td>
+                <td>1 ч. 30 мин.</td>
+                <td>50 лв / 25.59 €</td>
+                <td>200 лв / 102.36 €</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
 
         <footer className="footer" id="contact">
           <div className="footer-content">
