@@ -110,6 +110,7 @@ form > div > div{
   display: flex;
   flex-wrap: wrap;
   gap: 8px 12px;
+  justify-content: center;
 }
 
 /* Make radio/checkbox labels sit inline nicely */
@@ -126,7 +127,7 @@ input[type="radio"],
 input[type="checkbox"]{
   width: 1.05em;
   height: 1.05em;
-  accent-color: var(--primary);    /* modern, falls back gracefully */
+  accent-color:#c09d64;    /* modern, falls back gracefully */
   cursor: pointer;
 }
 
@@ -178,4 +179,16 @@ input[type="tel"]{
 }
 .dropdown-container .rs__menu div div{
       display: flex ;
+      align-items: center;
+}
+
+.dropdown-container div div{
+      border-radius: 10px;
+}
+.line-span {
+  display: block;          /* make span behave like a div */
+  height: 1px;             /* line thickness */
+  width: 100%;             /* full width */
+  background-color: #c09d64;  /* line color */
+  margin: 15px 0;          /* spacing */
 }

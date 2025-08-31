@@ -18,7 +18,6 @@ function App() {
       <div className="homepage">
         <header className="header sticky">
           <div className="nav-container">
-            <img src={brand.logo} alt={brand.alt || 'Лого'} className="logo" />
             <nav className="nav">
               <ul>
                 {navigation.map(item => (
